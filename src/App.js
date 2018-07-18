@@ -3,20 +3,6 @@ import logo from './logo.svg';
 import './App.css';
 import Movie from './Movie';
 
-const movieTitles = [
-  
-  "",
-  "",
-  
-]
-
-const movieImages =[
-  "http://t1.daumcdn.net/liveboard/movie/84bbece8ba5340e4924170534e22a0ae.JPG",
-  
-  
-  
-]
-
 const movies = [
   {
 
