@@ -12,5 +12,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/hsskey/movie_app.git",
+  "author": "hsskey <slingshot800@gmail.com>",
+  "license": "MIT"
 }
