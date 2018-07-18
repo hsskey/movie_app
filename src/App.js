@@ -23,9 +23,29 @@ const movies = [
   }
 ]
 
+
+
 class App extends Component {
+
+  //Render : componentWillMount() -> render() ->componentDidMount()
+    //Update : componentWillReceiveProps() -> shouldComponentUpdate() -> componentWillUpdate() ->render() -> componentDidUpdate()
+    //Update 예시 : componentWillUpdate()시 로딩아이콘 , componentdidUpdate()시 로딩아이콘 hide
+  
+  state = {
+    greeting: "New Moive"
+  }
+
+  componentDidMount(){
+    setTimeout(()=>{
+      this.setState({
+        greeting:"New Moive is comming"
+      })
+    },5000)
+  }
+
   render() {
     return <div className="App">
+        {this.state.greeting}
         {movies.map((movie,index) => {
           return <Movie title={movie.title} poster={movie.poster} key={index}/>;
         })}

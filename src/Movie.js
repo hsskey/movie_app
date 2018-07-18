@@ -3,6 +3,10 @@ import propTypes from 'prop-types';
 import './Movie.css';
 
 class Movie extends Component {
+    
+    
+
+    
 
     static propTypes ={
         title : propTypes.string.isRequired,
