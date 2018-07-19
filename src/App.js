@@ -15,7 +15,10 @@ class App extends Component {
   state = {};
 
   componentDidMount(){
-    fetch('https://yts.am/api/v2/list_movies.json?sort_by=download_count');
+    fetch('https://yts.am/api/v2/list_movies.json?sort_by=download_count')
+    .then(response =>response.json())
+    .then(json => console.log(json))
+    .catch(err =>console.log(err))
   }
   //영화 list를 불러오는 function
   _renderMovies = () =>{
