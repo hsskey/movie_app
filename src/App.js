@@ -15,33 +15,7 @@ class App extends Component {
   state = {};
 
   componentDidMount(){
-    setTimeout(()=>{
-      this.setState({
-        movies : [
-          {
-        
-          "title": "blackPanther",
-          "poster": "http://t1.daumcdn.net/liveboard/movie/84bbece8ba5340e4924170534e22a0ae.JPG"
-          }, 
-          {
-          "title": "infinityWar",
-          "poster": "https://images-na.ssl-images-amazon.com/images/I/A1t8xCe9jwL._SY679_.jpg"
-          },
-          {
-          "title": "deadPool",
-          "poster": "http://www.filmfeeder.co.uk/wp-content/uploads/2018/05/deadpool2body1.png"
-          },
-          {
-          "title": "antman&wasp",
-          "poster": "http://digitalspyuk.cdnds.net/18/18/768x384/landscape-1525180279-ant-man.jpg"
-          },
-          {
-            "title":"captainMarvel",
-            "poster":"https://i.redd.it/ac02e53cn5v01.jpg"
-          }
-        ]
-      })
-    },5000)
+    fetch('https://yts.am/api/v2/list_movies.json?sort_by=download_count');
   }
   //영화 list를 불러오는 function
   _renderMovies = () =>{
