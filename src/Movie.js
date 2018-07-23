@@ -28,11 +28,17 @@ import './Movie.css';
 //         )
 //     }
 // }
-function Movie({title,poster}){
+function Movie({title,poster,genre,description}){
     return(
             <div>
-                 <MoviePoster poster={poster} />
-                 <h1>{title}</h1>
+                <div className="movieColumns">
+                    <MoviePoster poster={poster} />
+                    
+                 </div>
+                 <div className="movieColumns">>
+                    <h1>{title}</h1>
+                    <MovieGenre genre={genre} />
+                 </div>
              </div>
     )
 }
@@ -42,14 +48,27 @@ function MoviePoster({poster}){
     return (
         <img src={poster} />
     )
-}
-Movie.propTypes = {
-    title: propTypes.string.isRequired,
-    poster: propTypes.string.isRequired
+}   
+function MovieGenre({genre}){
+    return(
+        <span className="Movie__Genre">{genre}</span>
+    )
 }
 
+
+Movie.propTypes = {
+    title: propTypes.string.isRequired,
+    poster: propTypes.string.isRequired,
+    genre: propTypes.array.isRequired,
+    description : propTypes.string.isRequired,
+}
 
 MoviePoster.propTypes ={
     poster: propTypes.string.isRequired
 }
+
+MovieGenre.propTypes ={
+    genre : propTypes.array.isRequired
+}
+
 export default Movie;
